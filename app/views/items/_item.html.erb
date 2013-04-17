@@ -1,0 +1,6 @@
+<tr>
+<td><%= link_to item.name, category_item_path(item.category, item) %></td>
+<td><%= item.description %></td>
+<td><%= link_to item.category.name, item.category %></td>
+<td><%= item.created_at.to_date %></td>
+</tr>

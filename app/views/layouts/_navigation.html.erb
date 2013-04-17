@@ -1,0 +1,24 @@
+
+<%= render_navigation :level => 1 %>
+<% if false%>
+<ul class="nav pull-right">
+  <% if user_signed_in? %>
+      <li>
+        <%= link_to('Выход', destroy_user_session_path, :method=>'delete') %>
+      </li>
+  <% else %>
+      <li>
+        <%= link_to('Вход', new_user_session_path)  %>
+      </li>
+  <% end %>
+  <% if user_signed_in? %>
+      <li>
+        <%= link_to('Редактировать аккаунт', edit_user_registration_path) %>
+      </li>
+  <% else %>
+      <li>
+        <%= link_to('Регистрация', new_user_registration_path)  %>
+      </li>
+  <% end %>
+</ul>
+<% end %>

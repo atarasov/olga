@@ -1,0 +1,18 @@
+<% content_for :sidebar do %>
+    <div class="span2">
+      <div class="well sidebar-nav">
+        <h3>Категории</h3>
+        <%= render_navigation :level => 2 %>
+      </div>
+      <!--/.well -->
+    </div><!--/span-->
+<% end %>
+<% content_for :title, "Категории" %>
+<div class="span10">
+  <h1>Список запчастей</h1>
+      <table class="table table-striped">
+        <%#= raise @items.inspect  %>
+        <%= render @items %>
+      </table>
+  <%= will_paginate @items, :next_label => ">>", :previous_label => "<<" %>
+</div>
