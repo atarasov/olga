@@ -1,6 +1,23 @@
-<tr>
-<td><%= link_to item.name, category_item_path(item.category, item) %></td>
-<td><%= item.description %></td>
-<td><%= link_to item.category.name, item.category %></td>
-<td><%= item.created_at.to_date %></td>
-</tr>
+<div class="row">
+  <div class="span8">
+  <table>
+    <tr>
+      <% if item.image.present? %>
+      <td>
+        <%= image_tag item.image.url(:thumb) %>
+      </td>
+      <% end %>
+      <td>
+        <h3><%= link_to item.name, category_item_path(item.category, item) %></h3>
+        <p><%= link_to item.category.name, item.category %> </p>
+
+      </td>
+    </tr>
+    <tr>
+      <td colspan="<%= item.image.present? ? 2 : 1 %>">
+        <p><%= item.description %>  </p>
+      </td>
+    </tr>
+  </table>
+  </div>
+  </div>

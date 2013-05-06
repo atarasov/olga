@@ -12,7 +12,9 @@
   <%= yield(:head) %>
 </head>
 <body>
-<header class="navbar navbar-fluid-top">
+<div class="wrap">
+<div class="container">
+<header class="navbar navbar-top">
   <nav class="navbar-inner">
     <div class="container">
       <%= render 'layouts/navigation' %>
@@ -20,18 +22,28 @@
   </nav>
 </header>
 <div id="main" role="main">
-  <div class="container-fluid">
+
     <div class="content">
-      <div class="row-fluid">
+      <div class="row">
         <%= yield :sidebar %>
 
           <%= yield %>
 
       </div>
-      <footer>
-      </footer>
+
     </div>
   </div> <!--! end of .container -->
+
+
 </div> <!--! end of #main -->
+</div>
+
+<div id="footer">
+  <div class="container">
+    <p class="muted credit">
+      © <%= Time.now.year %>
+     </p>
+  </div>
+    </div>
 </body>
 </html>

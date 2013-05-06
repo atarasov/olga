@@ -1,4 +1,10 @@
 ru:
+  date:
+    formats:
+      long: "%Y-%B-%d"
+  time:
+    formats:
+      long: "%Y-%B-%d"
   active_admin:
     dashboard: Панель управления
     dashboard_welcome:
@@ -49,8 +55,11 @@ ru:
       button_label: "Групповые операции"
       delete_confirmation: "Вы уверены, что хотите удалить %{plural_model}? Вы не сможете это отменить."
       succesfully_destroyed:
-        one: "Успешно удалено: 1 %{model}"
-        other: "Успешно удалено: %{count} %{plural_model}"
+        one: "Успешно удалено: 1 запись"
+        two: "Успешно удалено: 2 записи"
+        few: "Успешно удалено: %{count} записи"
+        many: "Успешно удалено: %{count} записей"
+        other: "Успешно удалено: %{count} записей"
       selection_toggle_explanation: "(Отметить всё / Снять выделение)"
       link: "Создать"
       action_label: "%{title} выбранное"

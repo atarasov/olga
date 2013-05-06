@@ -1,5 +1,5 @@
 <% content_for :sidebar do %>
-    <div class="span2 ">
+    <div class="span3 ">
       <div class="well sidebar-nav">
         <h3>Категории</h3>
         <%= render_navigation :level => 2 %>
@@ -7,11 +7,15 @@
     </div><!--/span-->
 <% end %>
 <% content_for :title, " Категория - "+@category.name %>
-<div class="span10">
+<div class="span9">
   <h1><%= @category.name %></h1>
-  <table class="table table-striped">
+  <% if @category.category_image.present? %>
+  <p><%= image_tag @category.category_image.url(:lager) %></p>
+      <% end %>
+  <p><%= @category.description %></p>
+  <!--<table class="table table-striped">-->
 
     <%= render @items  %>
-  </table>
+  <!--</table>-->
   <%= will_paginate @items, :next_label => ">>", :previous_label => "<<" %>
 </div>

@@ -1,11 +1,21 @@
 ActiveAdmin.register Item do
 
   index do
+    selectable_column
     column :name
     column :category
-    column :description
-    column :created_at
-    column :updated_at
+    column :image do |item|
+      image_tag(item.image.url(:thumb), :height => '100')
+    end
+    column :description do |item|
+      truncate(item.description, :length => 300, :omission => '...')
+    end
+    column :created_at  do |item|
+      Russian::strftime(item.created_at, "%d %B %Y")
+    end
+    column :updated_at  do |item|
+      Russian::strftime(item.updated_at, "%d %B %Y")
+    end
 
     default_actions
   end
@@ -14,10 +24,11 @@ ActiveAdmin.register Item do
   filter :category
   filter :created_at
 
-  form do |f|
+  form :html => { :enctype => "multipart/form-data" } do |f|
     f.inputs "Category" do
       f.input :name
       f.input :description
+      f.input :image, :as => :file, :hint => f.template.image_tag(f.object.image.url(:medium))
       f.input :category
     end
     f.actions

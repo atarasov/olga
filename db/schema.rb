@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130407163820) do
+ActiveRecord::Schema.define(:version => 20130506183206) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -49,16 +49,24 @@ ActiveRecord::Schema.define(:version => 20130407163820) do
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+    t.string   "category_image_file_name"
+    t.string   "category_image_content_type"
+    t.integer  "category_image_file_size"
+    t.datetime "category_image_updated_at"
   end
 
   create_table "items", :force => true do |t|
     t.string   "name"
     t.text     "description"
     t.integer  "category_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "items", ["category_id"], :name => "index_items_on_category_id"
