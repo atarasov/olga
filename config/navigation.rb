@@ -56,7 +56,6 @@ SimpleNavigation::Configuration.run do |navigation|
       category_item.dom_class = "nav nav-list"
       @categories = Category.all
       @categories.each do |category|
-        #raise item.name.inspect
         category_item.item :item, category.name + " ("+ category.items.count.to_s + ")", category_url(category)
       end
       # Add an item to the sub navigation (same params again)
