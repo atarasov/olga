@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @items = Item.where(:category_id => params[:id]).paginate(:page => params[:page])
+    @items = Item.where(:category_id => params[:id]).paginate(:page => params[:page], :per_page => 20)
   end
 
   def find_titles
