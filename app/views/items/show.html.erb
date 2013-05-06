@@ -9,9 +9,8 @@
 <% content_for :title, @item.name %>
 <div class="span9">
   <h1><%= @item.name %></h1>
-  <% if @item.mage.present? %>
+  <% if @item.image.present? %>
       <p><%= image_tag @item.image.url(:lager) %></p>
   <% end %>
   <p><%= @item.description %></p>
-  <!--<table class="table table-striped">-->
 </div>
