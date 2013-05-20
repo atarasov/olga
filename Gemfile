@@ -13,6 +13,8 @@ gem 'activeadmin'
 gem 'will_paginate', '~> 3.0'
 gem "simple-navigation"
 gem "paperclip", "~> 3.0"
+gem 'activeadmin-dragonfly', github: 'stefanoverna/activeadmin-dragonfly'
+gem 'activeadmin-wysihtml5', github: 'stefanoverna/activeadmin-wysihtml5'
 
 
 # Gems used only for assets and not required

@@ -3,10 +3,10 @@ class MainController < ApplicationController
   end
 
   def about
-
+    @about = About.first
   end
 
   def contact
-
+    @contact = Contact.first
   end
 end

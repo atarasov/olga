@@ -28,7 +28,7 @@ ActiveAdmin.register Category do
     f.inputs "Category" do
       f.input :name
       f.input :category_image, :as => :file, :hint => f.template.image_tag(f.object.category_image.url(:medium))
-      f.input :description
+      f.input :description, as: :wysihtml5, blocks: [ :bold, :italic, :underline, :ul, :ol, :outdent, :indent, :link, :image, :source]
     end
     f.actions
   end

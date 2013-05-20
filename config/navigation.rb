@@ -49,12 +49,18 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            when the item should be highlighted, you can set a regexp which is matched
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>. 
     #
-    primary.item :main, 'Главная', root_url
+    primary.item :main, 'Главная', root_url do |main|
+      main.dom_class = "nav nav-list"
+      @categories = Category.order('name ASC').all
+      @categories.each do |category|
+        main.item :item, category.name + " ("+ category.items.count.to_s + ")", category_url(category)
+      end
+    end
 
     # Add an item which has a sub navigation (same params, but with block)
     primary.item :categories, 'Категории', categories_url do |category_item|
       category_item.dom_class = "nav nav-list"
-      @categories = Category.all
+      @categories = Category.order('name ASC').all
       @categories.each do |category|
         category_item.item :item, category.name + " ("+ category.items.count.to_s + ")", category_url(category)
       end

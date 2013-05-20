@@ -2,4 +2,9 @@
 <div class="span12">
   <%= render 'layouts/messages' %>
   <h1>О нас</h1>
+  <% if @about  %>
+    <p>
+        <%= @about.text.html_safe %>
+    </p>
+  <% end  %>
 </div>

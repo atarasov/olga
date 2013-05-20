@@ -2,4 +2,22 @@
 <div class="span12">
   <%= render 'layouts/messages' %>
   <h1>Контакты</h1>
+
+  <% if @contact %>
+      <% if @contact.phone %>
+          <p><b>Телефон: </b><%= @contact.phone %></p>
+      <% end %>
+
+      <% if @contact.fax %>
+          <p><b>Факс: </b><%= @contact.fax %> </p>
+      <% end %>
+
+      <% if @contact.email %>
+          <p><b>E-mail: </b><%= @contact.email %>  </p>
+      <% end %>
+      <% if @contact.address %>
+          <p><b>Адрес: </b><%= @contact.address %> </p>
+      <% end %>
+
+  <% end %>
 </div>

@@ -11,7 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130506183206) do
+ActiveRecord::Schema.define(:version => 20130520191159) do
+
+  create_table "abouts", :force => true do |t|
+    t.text     "text"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -46,6 +52,20 @@ ActiveRecord::Schema.define(:version => 20130506183206) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
+  create_table "assets", :force => true do |t|
+    t.string   "storage_uid"
+    t.string   "storage_name"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.integer  "storage_width"
+    t.integer  "storage_height"
+    t.float    "storage_aspect_ratio"
+    t.integer  "storage_depth"
+    t.string   "storage_format"
+    t.string   "storage_mime_type"
+    t.string   "storage_size"
+  end
+
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.text     "description"
@@ -55,6 +75,15 @@ ActiveRecord::Schema.define(:version => 20130506183206) do
     t.string   "category_image_content_type"
     t.integer  "category_image_file_size"
     t.datetime "category_image_updated_at"
+  end
+
+  create_table "contacts", :force => true do |t|
+    t.string   "phone"
+    t.string   "email"
+    t.text     "address"
+    t.string   "fax"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "items", :force => true do |t|

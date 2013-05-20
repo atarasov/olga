@@ -27,7 +27,7 @@ ActiveAdmin.register Item do
   form :html => { :enctype => "multipart/form-data" } do |f|
     f.inputs "Category" do
       f.input :name
-      f.input :description
+      f.input :description, as: :wysihtml5, commands: [ :bold, :italic, :underline, :ul, :ol, :outdent, :indent, :link, :image, :source]
       f.input :image, :as => :file, :hint => f.template.image_tag(f.object.image.url(:medium))
       f.input :category
     end

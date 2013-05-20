@@ -1,4 +1,5 @@
 Olga::Application.routes.draw do
+  root :to => 'main#index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config do
     #namespace :admin do
@@ -14,7 +15,7 @@ Olga::Application.routes.draw do
       resources :items
     end
 
-    root :to => 'main#index'
+
   end
   #ActiveAdmin.routes(self)
 

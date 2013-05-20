@@ -1,5 +1,13 @@
+<% content_for :sidebar do %>
+    <div class="span3 ">
+      <div class="well sidebar-nav">
+        <h3>Категории</h3>
+        <%= render_navigation :level => 2 %>
+      </div><!--/.well -->
+    </div><!--/span-->
+<% end %>
 <% content_for :title, "Главная страница" %>
-<div class="span12">
+<div class="span9">
   <%= render 'layouts/messages' %>
   <h1>Главная страница</h1>
 </div>

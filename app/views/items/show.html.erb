@@ -5,5 +5,5 @@
   <% if @item.image.present? %>
       <p><%= image_tag @item.image.url(:lager) %></p>
   <% end %>
-  <p><%= @item.description %></p>
+  <p><%= @item.description.html_safe %></p>
 </div>

@@ -1,4 +1,56 @@
 ru:
+  formtastic:
+      wysihtml5:
+        command:
+          bold: "Жирный"
+          italic: "Наклонный"
+          link: "Ссылка"
+          image: "Картинка"
+          ul: "Маркерный список"
+          ol: "Нумерованный список"
+          source: "Показать HTML"
+          underline: "Подчеркивание"
+          outdent: "Выступ"
+          indent: "Отступ"
+        block_style: "Стиль блока"
+        blocks:
+          h1: "Заголовок 1"
+          h2: "Заголовок 2"
+          h3: "Заголовок 3"
+          h4: "Заголовок 4"
+          h5: "Заголовок 5"
+          h6: "Заголовок 6"
+          p: "Параграф"
+
+        dialog:
+          cancel: "Отмена"
+          ok: "OK"
+          image:
+            dialog_title: "Вставить новое изображение"
+            url_title: "Внешнее изображение"
+            gallery_title: "Галерея"
+            upload_title: "Загрузка"
+            url: "Ссылка:"
+            alignment: "Выравнивание:"
+            default: "Пусто"
+            left: "Слева"
+            right: "Справа"
+            scale: "Масштаб:"
+            alt: "Всплывающая подсказка:"
+            title: "<code>Заголовок</code> поле:"
+          link:
+            dialog_title: "Вставить новую ссылку"
+            url_title: "URL"
+            email_title: "Email"
+            anchor_title: "Связь"
+            url: "Ссылка:"
+            text: "Текст:"
+            rel: "<code>rel</code> поле:"
+            title: "<code>Заголовок</code> поле:"
+            email: "Email:"
+            anchor: "Имя связи:"
+            blank: "Открывать в новой вкладке"
+            your_text_here: "Ваш текст"
   date:
     formats:
       long: "%Y-%B-%d"
@@ -101,6 +153,16 @@ ru:
       descr: "%d %b %Y"
   activerecord:
       models:
+        contact:
+          one:  "Контакты"
+          few:  "Контакты"
+          many: "Контакты"
+          other: "Контакты"
+        about:
+          one:  "О нас"
+          few:  "О нас"
+          many: "О нас"
+          other: "О нас"
         category:
           one:  "Категория"
           few:  "Категории"
@@ -117,6 +179,13 @@ ru:
           many: Администраторы
           other: "Администраторов"
       attributes:
+        about:
+          text: Текст страницы
+        contact:
+          fax: Факс
+          email: E-mail
+          address: Адрес
+          phone: Телефон
         category:
           created_at: Дата создания
           updated_at: Дата последнего обновления
